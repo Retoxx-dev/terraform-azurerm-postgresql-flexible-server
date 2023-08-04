@@ -145,5 +145,5 @@ variable "configuration" {
     value = string
   }))
   description = "List of configuration objects for PostgreSQL Flexible Server"
-  default     = null
+  default     = []
 }
