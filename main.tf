@@ -88,7 +88,7 @@ resource "azurerm_postgresql_flexible_server_active_directory_administrator" "th
 #################################################################
 resource "azurerm_postgresql_flexible_server_configuration" "this" {
   for_each  = { for configuration in var.configuration : configuration.name => configuration if var.configuration != null }
-  name      = each.value.name #"azure.extensions"
+  name      = each.value.name
   server_id = azurerm_postgresql_flexible_server.this.id
-  value     = each.value.value #"CUBE,CITEXT,BTREE_GIST"
+  value     = each.value.value
 }
